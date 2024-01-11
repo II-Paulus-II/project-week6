@@ -12,27 +12,29 @@ import * as Game from "./game";
 import Info from "./info";
 /*import Detail from "./detail";
 import Button from "./button";*/
-
+import RigInfo from "./RigInfo";
 import Clicker from "./clicker";
 
 
 function App() {
   /* ----- Game Data Variables for useState ----- */
   const [damageDone, setDamageDone] = useState(0);
+  const [upgrades, setUpgrades] = useState(Constants.UPGRADES);
+  console.log("inside App", upgrades);
 
+  /* ----- Derived Variables ----- */
+  const currentClickDamage = Game.calculateClickDamage(upgrades);
+
+  /* ----- Handler Functions ----- */
   function handleClicker() {
-    const currentClickDamage = Game.calculateClickDamage();
     setDamageDone(damageDone + currentClickDamage);
   };
   
-
-  function newGame() {
-    console.log("me clicked")
-  }
-
   return (
     <div>
       <Info stateVariable={damageDone} text="Pts: " />
+      <Info stateVariable={currentClickDamage} text="Click Damage: " />
+      <RigInfo upgrades={upgrades} />
       <Clicker onClick={handleClicker} />
       
     </div>

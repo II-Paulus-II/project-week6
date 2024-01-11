@@ -1,4 +1,4 @@
-export const basePlayerClickDamage = 1;
+export const DEFAULT_CLICK_DAMAGE = 1;
 export const basePLayerBotNetSize = 1;
 export const baseBotNetEfficiency = 0.2;
 export const basePlayerGang = 0;
@@ -7,8 +7,8 @@ export const firstLevelHP = 5;
 export const startingWallet = 0;
 export const objectTypeArray = ["webserver", "crypto", "machine", "phishing"]; //Unused
 
-export const GCardUpgrades = {
-  None: { //Integreated Graphics doesn't count for damage
+export const GRAPHIC_CARD_UPGRADES = {
+  BASE: { //Integreated Graphics doesn't count for damage
     name: "iGPU",
     price: 0,
     damage: 0,
@@ -75,8 +75,8 @@ export const GCardUpgrades = {
   },
 };
 
-export const cpuUpgrades = {
-  PentiumThree: {
+export const CPU_UPGRADES = {
+  BASE: {
     name: "Pentium 3",
     price: 0,
     damage: 0,
@@ -108,8 +108,8 @@ export const cpuUpgrades = {
   },
 };
 
-export const hdUpgrades = {
-  Small: {
+export const HD_UPGRADES = {
+  BASE: {
     name: "Small",
     price: 0,
     damage: 0,
@@ -121,8 +121,8 @@ export const hdUpgrades = {
   },
 };
 
-export const ramUpgrades = {
-  First: {
+export const RAM_UPGRADES = {
+  BASE: {
     name: "First",
     price: 0,
     damage: 0,
@@ -138,6 +138,14 @@ export const ramUpgrades = {
     damage: 2,
   },
 };
+
+// Starting Player Object 
+export const UPGRADES = {
+  GRAPHIC_CARD_UPGRADES: "BASE",
+  CPU_UPGRADES: "BASE",
+  HD_UPGRADES: "BASE",
+  RAM_UPGRADES: "BASE",
+}
 
 //Gang upgrades -- Will make effiency affect botnet base damage and gang-member damage is flat
 
