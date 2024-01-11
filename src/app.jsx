@@ -10,6 +10,7 @@ import * as Game from "./game";
 /* ----- React JSX Object Imports ----- */
 
 import Info from "./info";
+import Detail from "./detail";
 import Button from "./button";
 
 
@@ -50,10 +51,16 @@ function App() {
       <Info stateVariable={numberObjectsHacked} />
       <Info stateVariable={currentLevel} />
       <Info stateVariable={sizeWallet} />
-      <Info stateVariable={clickDamage, dpsDamage} />
+      <Detail type="">
+        <Info stateVariable={clickDamage} />
+        <Info stateVariable={dpsDamage} />
+      </Detail>
       <Info />
-      <Info stateVariable={sizeBotnet, botnetEfficiency} />
-      <Info stateVariable={objectHP, maxObjectHP} />
+      <Detail type="fraction"> 
+        <Info stateVariable={sizeBotnet} />
+        <Info stateVariable={botnetEfficiency} />
+      </Detail>
+      /*<Detail stateVariable={objectHP, maxObjectHP} />*/
       
     </div>
   )
