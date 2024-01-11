@@ -1,4 +1,9 @@
-# React + Vite
+# Hacker Clicker in React
+
+Project week 2 Hacker Clicker remade with react
+
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
