@@ -29,7 +29,7 @@ export function upgradeRig(param, upgrades) {
       break;
     case "GPU":
       upgradeObject = Constants.GRAPHIC_CARD_UPGRADES;
-      playerItem = upgrades.GRAPHIC;
+      playerItem = upgrades.GPU;
       copyUpgrades.GPU = getNewItemName(playerItem, upgradeObject);
       break;
     case "HD":

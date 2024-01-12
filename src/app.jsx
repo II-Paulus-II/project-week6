@@ -31,8 +31,8 @@ function App() {
 
   function handleUpgrade(param) {
     const upgradedRigData = Game.upgradeRig(param, upgrades);
-    console.log("inside of App.jsx ", upgradedRigData);
-    setUpgrades(upgradedRigData);
+    //setUpgrades({});
+    setUpgrades(upgrades => ({...upgradedRigData}));
   };
   
   return (
