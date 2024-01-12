@@ -20,7 +20,6 @@ function App() {
   /* ----- Game Data Variables for useState ----- */
   const [damageDone, setDamageDone] = useState(0);
   const [upgrades, setUpgrades] = useState(Constants.UPGRADES);
-  console.log("inside App", upgrades);
 
   /* ----- Derived Variables ----- */
   const currentClickDamage = Game.calculateClickDamage(upgrades);
@@ -29,12 +28,18 @@ function App() {
   function handleClicker() {
     setDamageDone(damageDone + currentClickDamage);
   };
+
+  function handleUpgrade(param) {
+    const upgradedRigData = Game.upgradeRig(param, upgrades);
+    console.log("inside of App.jsx ", upgradedRigData);
+    setUpgrades(upgradedRigData);
+  };
   
   return (
     <div>
       <Info stateVariable={damageDone} text="Pts: " />
       <Info stateVariable={currentClickDamage} text="Click Damage: " />
-      <RigInfo upgrades={upgrades} />
+      <RigInfo upgrades={upgrades} handleUpgrade={handleUpgrade} />
       <Clicker onClick={handleClicker} />
       
     </div>

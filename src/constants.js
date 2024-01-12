@@ -141,10 +141,10 @@ export const RAM_UPGRADES = {
 
 // Starting Player Object 
 export const UPGRADES = {
-  GRAPHIC_CARD_UPGRADES: "BASE",
-  CPU_UPGRADES: "BASE",
-  HD_UPGRADES: "BASE",
-  RAM_UPGRADES: "BASE",
+  GPU: "BASE",
+  CPU: "BASE",
+  HD: "BASE",
+  RAM: "BASE",
 }
 
 //Gang upgrades -- Will make effiency affect botnet base damage and gang-member damage is flat
