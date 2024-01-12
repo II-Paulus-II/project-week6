@@ -24,7 +24,7 @@ function getNewItemName(playerItem, upgradeObject) {
 export function upgradeRig(param, upgrades) {
   let upgradeObject = {};
   let playerItem = {};
-  let copyUpgrades = upgrades;
+  let copyUpgrades = {...upgrades};
   switch(param) {
     case "CPU":
       upgradeObject = Constants.CPU_UPGRADES;
@@ -58,7 +58,7 @@ export function calculateDPS(gang) {
 }
 
 export function hireGang(param, gang) {
-  let copyGang = gang;
+  let copyGang = {...gang};
   switch(param) {
     case "ADMIN":
       copyGang.ADMIN++;
@@ -74,4 +74,8 @@ export function hireGang(param, gang) {
       break;
   }
   return copyGang;
+}
+
+export function calculateMaxObjectHP(dps, click) {
+  return ((2 * click) + (4 * dps));
 }

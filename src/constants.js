@@ -3,7 +3,7 @@ export const basePLayerBotNetSize = 1;
 export const baseBotNetEfficiency = 0.2;
 export const basePlayerGang = 0;
 export const objectsinLevel = 10 // I do not want this to change - 10 per level 
-export const firstLevelHP = 5;
+export const FIRSTLEVEL = 5;
 export const startingWallet = 0;
 export const objectTypeArray = ["webserver", "crypto", "machine", "phishing"]; //Unused
 
