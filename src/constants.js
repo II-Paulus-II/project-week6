@@ -7,7 +7,7 @@ export const firstLevelHP = 5;
 export const startingWallet = 0;
 export const objectTypeArray = ["webserver", "crypto", "machine", "phishing"]; //Unused
 
-export const GRAPHIC_CARD_UPGRADES = {
+export const GPU_UPGRADES = {
   BASE: { //Integreated Graphics doesn't count for damage
     name: "iGPU",
     price: 0,
@@ -149,28 +149,34 @@ export const UPGRADES = {
 
 //Gang upgrades -- Will make effiency affect botnet base damage and gang-member damage is flat
 
-export const botnetAdmin = {
+export const ADMIN = {
   name: "Admins",
   price: 1000,
   efficiency: 10,
 };
 
-export const scripter = {
+export const SCRIPTER = {
   name: "Scripters",
   price: 1200,
   damage: 25,
   efficiency: 2,
 };
 
-export const researcher = {
+export const RESEARCHER = {
   name: "Researchers",
   price: 600,
   damage: 15,
 };
 
-export const mule = {
+export const MULE = {
   name: "Mules",
   price: 1000,
   money: 5,
 };
 
+export const GANG = {
+  ADMIN: 0,
+  SCRIPTER: 0,
+  RESEARCHER: 0,
+  MULE: 0,
+}

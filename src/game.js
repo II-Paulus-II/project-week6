@@ -6,7 +6,11 @@ export function printLog() {
 };
 
 export function calculateClickDamage(upgrades) {
-  let calculatedDamage = Constants.DEFAULT_CLICK_DAMAGE;
+  const cpuDamage = Constants.CPU_UPGRADES[upgrades.CPU].damage;
+  const ramDamage = Constants.RAM_UPGRADES[upgrades.RAM].damage;
+  const gpuDamage = Constants.GPU_UPGRADES[upgrades.GPU].damage;
+  const hdDamage = Constants.HD_UPGRADES[upgrades.HD].damage;
+  const calculatedDamage = Constants.DEFAULT_CLICK_DAMAGE + cpuDamage + ramDamage + gpuDamage + hdDamage;
   return calculatedDamage;
 };
 
@@ -28,7 +32,7 @@ export function upgradeRig(param, upgrades) {
       copyUpgrades.CPU = getNewItemName(playerItem, upgradeObject);
       break;
     case "GPU":
-      upgradeObject = Constants.GRAPHIC_CARD_UPGRADES;
+      upgradeObject = Constants.GPU_UPGRADES;
       playerItem = upgrades.GPU;
       copyUpgrades.GPU = getNewItemName(playerItem, upgradeObject);
       break;
@@ -46,3 +50,28 @@ export function upgradeRig(param, upgrades) {
   //const price = upgradeObject[possibleItem[currentItemIndex+1]].price;
   return copyUpgrades; 
 };
+
+export function calculateDPS(gang) {
+  const scripterDamage = gang.SCRIPTER * Constants.SCRIPTER.damage;
+  const researcherDamage = gang.RESEARCHER * Constants.RESEARCHER.damage;
+  return scripterDamage + researcherDamage + 1;
+}
+
+export function hireGang(param, gang) {
+  let copyGang = gang;
+  switch(param) {
+    case "ADMIN":
+      copyGang.ADMIN++;
+      break;
+    case "SCRIPTER":
+      copyGang.SCRIPTER++;
+      break;
+    case "RESEARCHER":
+      copyGang.RESEARCHER++;
+      break;
+    case "MULE":
+      copyGang.MULE++;
+      break;
+  }
+  return copyGang;
+}
