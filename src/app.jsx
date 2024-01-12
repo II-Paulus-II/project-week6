@@ -22,19 +22,21 @@ function App() {
   const [damageDone, setDamageDone] = useState(0);
   const [upgrades, setUpgrades] = useState(Constants.UPGRADES);
   const [gang, setGang] = useState(Constants.GANG);
-  //const [currentDPSDamage, setCurrentDPSDamage] = useState(Game.calculateDPS(gang));
   const [currentObjectHP, setCurrentObjectHP] = useState(Constants.FIRSTLEVEL);
   const [objectsHacked, setObjectsHacked] = useState(0);
 
   /* ----- Derived Variables ----- */
   const currentClickDamage = Game.calculateClickDamage(upgrades);
   const currentDPSDamage = Game.calculateDPS(gang);
-  const currentMaxObjectHP = Game.calculateMaxObjectHP(currentDPSDamage, currentClickDamage);
+  const currentMaxObjectHP = Constants.FIRSTLEVEL;
 
   /* ----- Handler Functions ----- */
   function handleClicker() {
     setDamageDone(damageDone + currentClickDamage);
     setCurrentObjectHP(currentObjectHP - currentClickDamage);
+    if(currentObjectHP <= 0) {
+      handleObjects();
+    }
   };
 
   function handleUpgrade(param) {
@@ -46,13 +48,12 @@ function App() {
   function handleGang(param) {
     const newGang = Game.hireGang(param, gang);
     setGang(newGang);
-    //const newDPS = Game.calculateDPS(newGang);
-    //setCurrentDPSDamage(newDPS);
   };
 
   function handleObjects() {
-    console.log("im less than 0hp do something");
-  }
+    setCurrentObjectHP(currentMaxObjectHP);
+    setObjectsHacked(objectsHacked +1 );
+  };
   
   /* ----- Handle DPS damage useEffect ----- */
 
@@ -60,20 +61,21 @@ function App() {
     const dpsInterval = setInterval(() => {
       setDamageDone((damageDone) => damageDone + 1);
       setCurrentObjectHP((currentObjectHP) => currentObjectHP - 1);
+
     }, 1000/currentDPSDamage );
 
     if(currentObjectHP <= 0) {
       handleObjects(); 
-    };
+    }
 
     return () => {
       clearInterval(dpsInterval);
     };
-  }, [currentDPSDamage]);
+  }, [currentDPSDamage, currentObjectHP]);
 
   return (
     <div>
-      <Info stateVariable={damageDone} text="Pts: " />
+      <Info stateVariable={objectsHacked} text="Pts: " />
       <Info stateVariable={currentClickDamage} text="Click Damage: " />
       <Info stateVariable={currentDPSDamage} text="DPS: " />
       <Info stateVariable={currentObjectHP} text="HP: " />
@@ -81,7 +83,7 @@ function App() {
       <Clicker onClick={handleClicker} />
       <Gang gang={gang} handleGang={handleGang}/>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
