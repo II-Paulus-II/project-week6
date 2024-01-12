@@ -1,4 +1,4 @@
-export const basePlayerClickDamage = 1;
+export const DEFAULT_CLICK_DAMAGE = 1;
 export const basePLayerBotNetSize = 1;
 export const baseBotNetEfficiency = 0.2;
 export const basePlayerGang = 0;
@@ -7,8 +7,8 @@ export const firstLevelHP = 5;
 export const startingWallet = 0;
 export const objectTypeArray = ["webserver", "crypto", "machine", "phishing"]; //Unused
 
-export const GCardUpgrades = {
-  None: { //Integreated Graphics doesn't count for damage
+export const GPU_UPGRADES = {
+  BASE: { //Integreated Graphics doesn't count for damage
     name: "iGPU",
     price: 0,
     damage: 0,
@@ -75,8 +75,8 @@ export const GCardUpgrades = {
   },
 };
 
-export const cpuUpgrades = {
-  PentiumThree: {
+export const CPU_UPGRADES = {
+  BASE: {
     name: "Pentium 3",
     price: 0,
     damage: 0,
@@ -108,8 +108,8 @@ export const cpuUpgrades = {
   },
 };
 
-export const hdUpgrades = {
-  Small: {
+export const HD_UPGRADES = {
+  BASE: {
     name: "Small",
     price: 0,
     damage: 0,
@@ -121,8 +121,8 @@ export const hdUpgrades = {
   },
 };
 
-export const ramUpgrades = {
-  First: {
+export const RAM_UPGRADES = {
+  BASE: {
     name: "First",
     price: 0,
     damage: 0,
@@ -139,30 +139,44 @@ export const ramUpgrades = {
   },
 };
 
+// Starting Player Object 
+export const UPGRADES = {
+  GPU: "BASE",
+  CPU: "BASE",
+  HD: "BASE",
+  RAM: "BASE",
+}
+
 //Gang upgrades -- Will make effiency affect botnet base damage and gang-member damage is flat
 
-export const botnetAdmin = {
+export const ADMIN = {
   name: "Admins",
   price: 1000,
   efficiency: 10,
 };
 
-export const scripter = {
+export const SCRIPTER = {
   name: "Scripters",
   price: 1200,
   damage: 25,
   efficiency: 2,
 };
 
-export const researcher = {
+export const RESEARCHER = {
   name: "Researchers",
   price: 600,
   damage: 15,
 };
 
-export const mule = {
+export const MULE = {
   name: "Mules",
   price: 1000,
   money: 5,
 };
 
+export const GANG = {
+  ADMIN: 0,
+  SCRIPTER: 0,
+  RESEARCHER: 0,
+  MULE: 0,
+}

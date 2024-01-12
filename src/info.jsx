@@ -1,7 +1,7 @@
-export default function({stateVariable}) {
+export default function({text, stateVariable}) {
   return (
     <div>
-      <p>{stateVariable}</p>
+      <p>{text}{stateVariable}</p>
     </div>
   );
 };
