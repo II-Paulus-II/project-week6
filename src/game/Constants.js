@@ -1,10 +1,10 @@
+export const DEFAULT_LEVEL = 1;
 export const DEFAULT_CLICK_DAMAGE = 1;
 export const basePLayerBotNetSize = 1;
 export const baseBotNetEfficiency = 0.2;
-export const basePlayerGang = 0;
-export const objectsinLevel = 10 // I do not want this to change - 10 per level 
-export const FIRSTLEVEL = 5;
-export const startingWallet = 0;
+export const DEFAULT_LEVEL_OBJECTS = 10; // I do not want this to change - 10 per level 
+export const FIRST_LEVEL = 5;
+export const STARTING_WALLET = 0;
 export const objectTypeArray = ["webserver", "crypto", "machine", "phishing"]; //Unused
 
 export const GPU_UPGRADES = {
@@ -84,7 +84,7 @@ export const CPU_UPGRADES = {
   PentiumFour: {
     name: "Pentium 4",
     price: 40,
-    damage: 1,
+  damage: 1,
   },
   Core2Duo: {
     name: "Core 2 Duo",
