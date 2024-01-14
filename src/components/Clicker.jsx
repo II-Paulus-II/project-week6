@@ -1,6 +1,6 @@
 export default function Clicker({onClick}) {
   return (
-    <div>
+    <div className="clickDiv">
       <button className="objectHacker" onClick={onClick}></button>
     </div>
   );

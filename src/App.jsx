@@ -81,11 +81,12 @@ function App() {
       <Info stateVariable={gameLevel} text="Level: " />
       <Info stateVariable={wallet} text={'\u00A3'} />
       <Info stateVariable={currentClickDamage} text="Click Damage: " />
-      <Info stateVariable={currentDPSDamage} text="DPS: " />
       <Info stateVariable={currentObjectHP} text="HP: " />
+      <Info stateVariable={currentDPSDamage} text="DPS: " />
       <RigInfo upgrades={upgrades} wallet={wallet} handleUpgrade={handleUpgrade} />
       <Clicker onClick={handleClicker} />
       <Gang gang={gang} wallet={wallet} handleGang={handleGang}/>
+      <div></div><div></div><div></div>
     </div>
   );
 };
