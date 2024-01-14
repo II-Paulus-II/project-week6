@@ -1,4 +1,4 @@
-import * as Constants from "./constants.js";
+import * as Constants from "../game/Constants.js";
 
 export default function({gang, handleGang}) {
   return (

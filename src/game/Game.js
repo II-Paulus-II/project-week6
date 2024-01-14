@@ -1,5 +1,5 @@
 /* ----- Imports ----- */
-import * as Constants from "./constants.js";
+import * as Constants from "./Constants.js";
 
 export function printLog() {
   console.log("this works");

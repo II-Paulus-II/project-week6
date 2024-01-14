@@ -4,17 +4,17 @@ import { useState, useEffect } from "react";
 
 /* ----- Functionality and Constants Import ----- */
 
-import * as Constants from "./constants";
-import * as Game from "./game";
+import * as Constants from "./game/Constants";
+import * as Game from "./game/Game";
 
 /* ----- React JSX Object Imports ----- */
 
-import Info from "./info";
+import Info from "./components/Info";
 /*import Detail from "./detail";
 import Button from "./button";*/
-import RigInfo from "./RigInfo";
-import Clicker from "./clicker";
-import Gang from "./Gang";
+import RigInfo from "./components/RigInfo";
+import Clicker from "./components/Clicker";
+import Gang from "./components/Gang";
 
 
 function App() {
