@@ -10,8 +10,6 @@ import * as Game from "./game/Game";
 /* ----- React JSX Object Imports ----- */
 
 import Info from "./components/Info";
-/*import Detail from "./detail";
-import Button from "./button";*/
 import RigInfo from "./components/RigInfo";
 import Clicker from "./components/Clicker";
 import Gang from "./components/Gang";
@@ -78,7 +76,7 @@ function App() {
   }, [currentDPSDamage, currentObjectHP]);
 
   return (
-    <div>
+    <div className="clickArea">
       <Info stateVariable={objectsHacked} text="Pts: " />
       <Info stateVariable={gameLevel} text="Level: " />
       <Info stateVariable={wallet} text={'\u00A3'} />

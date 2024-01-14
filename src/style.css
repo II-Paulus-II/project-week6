@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;
+}
+
+body {
+  display: grid;
+  overflow: hidden;
+  color: aliceblue;
+  grid-template-rows: 3fr 21fr 1fr;
+  grid-template-columns: 1fr;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+header, footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.left, .right {
+  display: flex;
+}
+
+.clickArea {
+  border-radius: 5%;
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-rows: 3fr 2fr 2fr 15fr 3fr;
+  background-image: url(/images/data-center.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%
+}
+
+.objectHacker {
+  width: 70%;
+  height: 50%;
+  min-width: 120px;
+  min-height: 120px;
+  box-sizing: content-box;
+  border: 3px solid aliceblue;
+  background-image: url(/images/hacking.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#objectHPTitle {
+  text-align: center;
+  display: inline-block;
+  text-shadow: 2px 2px black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#newGame {
+  text-align: center;
+  display: inline-block;
+  text-shadow: 2px 2px black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#newGame:hover {
+  text-shadow: none;
+}
+
+#objectHP {
+  text-align: center;
+  display: inline-block;
+  text-shadow: 2px 2px black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.rigBox, .gangBox {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.topBox {
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+}
+.detailsBox {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.3rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.myHoverButton:hover {
+  padding: 0rem 3.5rem;
+  background-color: aliceblue;
+  color: black;
+  text-shadow: none;
+}
+
+.rigandgangTitle {
+  padding: 0.5rem 3.5rem;
+  border: 2px solid black;
+  background-color: aliceblue;
+  background-size: 75%;
+  color: black;
+  font-size: 2rem;
+}
+
+.someHelp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#littleHelp {
+  text-align: center;
+  width: 85%;
+}
+
+.hidden {
+  display: none;
+}

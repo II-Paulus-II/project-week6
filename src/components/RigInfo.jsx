@@ -11,13 +11,13 @@ export default function({upgrades, wallet, handleUpgrade}) {
     <div className="box rigBox">
       <div className="rigandgangTitle">Rig:</div>
       <div>Current CPU: {Constants.CPU_UPGRADES[upgrades.CPU].name}</div>
-      <button className={canUpgradeCPU ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("CPU")}}>Upgrade</button>
+      <div><button className={canUpgradeCPU ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("CPU")}}>Upgrade</button></div>
       <div>Current RAM: {Constants.RAM_UPGRADES[upgrades.RAM].name}</div>
-      <button className={canUpgradeRAM ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("RAM")}}>Upgrade</button>
+      <div><button className={canUpgradeRAM ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("RAM")}}>Upgrade</button></div>
       <div>Current GPU: {Constants.GPU_UPGRADES[upgrades.GPU].name}</div>
-      <button className={canUpgradeGPU ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("GPU")}}>Upgrade</button>
+      <div><button className={canUpgradeGPU ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("GPU")}}>Upgrade</button></div>
       <div>Current HD: {Constants.HD_UPGRADES[upgrades.HD].name}</div>
-      <button className={canUpgradeHD ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("HD")}}>Upgrade</button>
+      <div><button className={canUpgradeHD ? "myHoverButton" : "hidden"} onClick={() => { handleUpgrade("HD")}}>Upgrade</button></div>
     </div>
   );
 };
