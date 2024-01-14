@@ -26,6 +26,7 @@ function App() {
   const [objectsHacked, setObjectsHacked] = useState(0);
   const [gameLevel, setGameLevel] = useState(Constants.DEFAULT_LEVEL);
   const [objectsInLevel, setObjectsInLevel] = useState(Constants.DEFAULT_LEVEL_OBJECTS);
+  const [wallet, setWallet] = useState(Constants.STARTING_WALLET);
 
   /* ----- Derived Variables ----- */
   const currentClickDamage = Game.calculateClickDamage(upgrades);
@@ -45,7 +46,7 @@ function App() {
         setObjectsInLevel(Constants.DEFAULT_LEVEL_OBJECTS);
       }
       setCurrentObjectHP(currentMaxObjectHP);
-
+      setWallet(wallet + Game.calculateMoneyEarned(gang, currentMaxObjectHP));
     }
   };
 
@@ -80,12 +81,13 @@ function App() {
     <div>
       <Info stateVariable={objectsHacked} text="Pts: " />
       <Info stateVariable={gameLevel} text="Level: " />
+      <Info stateVariable={wallet} text={'\u00A3'} />
       <Info stateVariable={currentClickDamage} text="Click Damage: " />
       <Info stateVariable={currentDPSDamage} text="DPS: " />
       <Info stateVariable={currentObjectHP} text="HP: " />
-      <RigInfo upgrades={upgrades} handleUpgrade={handleUpgrade} />
+      <RigInfo upgrades={upgrades} wallet={wallet} handleUpgrade={handleUpgrade} />
       <Clicker onClick={handleClicker} />
-      <Gang gang={gang} handleGang={handleGang}/>
+      <Gang gang={gang} wallet={wallet} handleGang={handleGang}/>
     </div>
   );
 };

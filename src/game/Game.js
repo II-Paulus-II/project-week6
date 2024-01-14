@@ -82,3 +82,31 @@ export function calculateMaxObjectHP(lvl, dps, click) {
   }
   return ((2 * click) + (4 * dps));
 }
+
+export function calculateMoneyEarned(gang, HP) {
+  //console.log(gang.MULE, " Is number of mules");
+  let chanceOfMoney = Math.random();
+  if (chanceOfMoney < 0.15) {
+    return HP *(3+(gang.MULE * Constants.MULE.money)); //May change this amount. 
+  }
+  return 0;
+}
+
+export function canUpgrade(playerItem, UpgradeObject, wallet) {
+  const possibleItem = Object.keys(UpgradeObject);
+  const numAvailItems = possibleItem.length;
+  let canUpgrade = false;
+
+  //First Check if current object is not the last member of the list?
+  const currentItemIndex = possibleItem.indexOf(playerItem);
+  
+  if (currentItemIndex < numAvailItems-1) {
+    const nextItemPrice = UpgradeObject[possibleItem[currentItemIndex+1]].price;
+    //Second check inside first to prevent checking price for non existent next item. 
+    if ( nextItemPrice <= wallet ) {
+      canUpgrade = true;
+    }
+  }
+
+  return canUpgrade;
+}

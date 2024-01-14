@@ -1,6 +1,6 @@
 import * as Constants from "../game/Constants.js";
 
-export default function({gang, handleGang}) {
+export default function({gang, wallet, handleGang}) {
   return (
     <div className="box gangBox">
       <div className="rigandgangTitle">Gang:</div>
