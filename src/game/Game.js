@@ -76,6 +76,9 @@ export function hireGang(param, gang) {
   return copyGang;
 }
 
-export function calculateMaxObjectHP(dps, click) {
+export function calculateMaxObjectHP(lvl, dps, click) {
+  if (lvl == 1) {
+    return Constants.FIRST_LEVEL;
+  }
   return ((2 * click) + (4 * dps));
 }
