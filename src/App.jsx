@@ -54,13 +54,15 @@ function App() {
   };
 
   function handleUpgrade(param) {
-    const upgradedRigData = Game.upgradeRig(param, upgrades);
-    setUpgrades(upgradedRigData);
+    const upgradedRigData = Game.upgradeRig(param, upgrades, wallet);
+    setUpgrades(upgradedRigData[0]);
+    setWallet(wallet - upgradedRigData[1]);
   };
  
   function handleGang(param) {
-    const newGang = Game.hireGang(param, gang);
-    setGang(newGang);
+    const newGang = Game.hireGang(param, gang, wallet);
+    setGang(newGang[0]);
+    setWallet(wallet - newGang[1]);
   };
 
   /* ----- Handle DPS damage useEffect ----- */
@@ -76,6 +78,10 @@ function App() {
   }, [currentDPSDamage, currentObjectHP]);
 
   return (
+    <>
+    <div className="pageTitle">
+      <h1> CLICK THE MONITOR TO BEGIN HACKING! </h1>
+    </div>
     <div className="clickArea">
       <Info stateVariable={objectsHacked} text="Pts: " />
       <Info stateVariable={gameLevel} text="Level: " />
@@ -88,6 +94,7 @@ function App() {
       <Gang gang={gang} wallet={wallet} handleGang={handleGang}/>
       <div></div><div></div><div></div>
     </div>
+    </>
   );
 };
 

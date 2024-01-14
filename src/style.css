@@ -18,7 +18,7 @@ body {
 
 .clickArea {
   gap: 0.5rem;
-  margin:10%;
+  margin:4%;
   border-radius: 5%;
   display: grid;
   grid-template-columns: 2fr 3fr 2fr;
@@ -88,4 +88,11 @@ body {
   text-shadow: 2px 2px black;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.pageTitle {
+  margin: 1rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
