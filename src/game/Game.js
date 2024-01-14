@@ -110,3 +110,12 @@ export function canUpgrade(playerItem, UpgradeObject, wallet) {
 
   return canUpgrade;
 }
+
+export function canHireGang(member, wallet) {
+  let canAfford = false;
+  const hirePrice = member.price;
+  if (hirePrice <= wallet) {
+    canAfford = true;
+  }
+  return canAfford
+}
